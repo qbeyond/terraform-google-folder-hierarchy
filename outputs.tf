@@ -1,4 +1,5 @@
 output "folders" {
+  description = "Flat map of all created folders. Keys are identical to input keys."
   value = merge(
     google_folder.level_0,
     google_folder.level_1,
