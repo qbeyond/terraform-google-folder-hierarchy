@@ -42,13 +42,13 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_hierarchy"></a> [hierarchy](#input\_hierarchy) | The hierarchy of folders to create. All keys need to be unique! | <pre>map(object({<br>    display_name = string<br>    childs = optional(map(object({<br>      display_name = string<br>      childs = optional(map(object({<br>        display_name = string<br>        childs = optional(map(object({<br>          display_name = string<br>          childs = optional(map(object({<br>            display_name = string<br>            childs = optional(map(object({<br>              display_name = string<br>              childs = optional(map(object({<br>                display_name = string<br>                childs = optional(map(object({<br>                  display_name = string<br>                  childs = optional(map(object({<br>                    display_name = string<br>                    childs = optional(map(object({<br>                      display_name = string<br>                    })))<br>                  })))<br>                })))<br>              })))<br>            })))<br>          })))<br>        })))<br>      })))<br>    })))<br>  }))</pre> | n/a | yes |
-| <a name="input_parent"></a> [parent](#input\_parent) | Parent in folders/folder\_id or organizations/org\_id format. | `string` | n/a | yes |
+| <a name="input_parent"></a> [parent](#input\_parent) | The resource name of the parent Folder or Organization. Must be of the form `folders/{folder_id}` or `organizations/{org_id}`. | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_folders"></a> [folders](#output\_folders) | n/a |
+| <a name="output_folders"></a> [folders](#output\_folders) | Flat map of all created folders. Keys are identical to input keys. |
 <!-- END_TF_DOCS -->
 
 # Contribute
