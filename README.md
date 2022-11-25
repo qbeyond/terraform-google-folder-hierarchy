@@ -4,15 +4,19 @@
 
 ----
 <!-- BEGIN_TF_DOCS -->
-Add a Short description of this module
+This module create a folder hierarchy based on an tree input.
 
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=0.13.0 |
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_google"></a> [google](#provider\_google) | n/a |
 
 ## Modules
 
@@ -20,15 +24,31 @@ No modules.
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [google_folder.level_0](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/folder) | resource |
+| [google_folder.level_1](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/folder) | resource |
+| [google_folder.level_2](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/folder) | resource |
+| [google_folder.level_3](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/folder) | resource |
+| [google_folder.level_4](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/folder) | resource |
+| [google_folder.level_5](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/folder) | resource |
+| [google_folder.level_6](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/folder) | resource |
+| [google_folder.level_7](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/folder) | resource |
+| [google_folder.level_8](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/folder) | resource |
+| [google_folder.level_9](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/folder) | resource |
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_hierarchy"></a> [hierarchy](#input\_hierarchy) | The hierarchy of folders to create. All keys need to be unique! | <pre>map(object({<br>    display_name = string<br>    childs = optional(map(object({<br>      display_name = string<br>      childs = optional(map(object({<br>        display_name = string<br>        childs = optional(map(object({<br>          display_name = string<br>          childs = optional(map(object({<br>            display_name = string<br>            childs = optional(map(object({<br>              display_name = string<br>              childs = optional(map(object({<br>                display_name = string<br>                childs = optional(map(object({<br>                  display_name = string<br>                  childs = optional(map(object({<br>                    display_name = string<br>                    childs = optional(map(object({<br>                      display_name = string<br>                    })))<br>                  })))<br>                })))<br>              })))<br>            })))<br>          })))<br>        })))<br>      })))<br>    })))<br>  }))</pre> | n/a | yes |
+| <a name="input_parent"></a> [parent](#input\_parent) | Parent in folders/folder\_id or organizations/org\_id format. | `string` | n/a | yes |
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_folders"></a> [folders](#output\_folders) | n/a |
 <!-- END_TF_DOCS -->
 
 # Contribute
