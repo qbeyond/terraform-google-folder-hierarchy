@@ -109,7 +109,7 @@ variable "hierarchy" {
 }
 
 variable "parent" {
-  description = "Parent in folders/folder_id or organizations/org_id format."
+  description = "The resource name of the parent Folder or Organization. Must be of the form `folders/{folder_id}` or `organizations/{org_id}`."
   type        = string
   validation {
     condition     = var.parent == null || can(regex("(organizations|folders)/[0-9]+", var.parent))
